@@ -17,9 +17,18 @@ module.exports = {
 
     editar(objNatureza){
         var natureza = new NaturezaLancamentoModel(objNatureza);
-        var index = naturezas.indexOf(natureza.id);
+        var index = naturezas.map(n => n.id).indexOf(natureza.id);
 
         naturezas.splice(index,1, natureza);
         return naturezas.filter(n => n.id == natureza.id)[0];
+    },
+
+    deletar(id){
+        var index = naturezas.map(n => n.id).indexOf(id);
+        if(index < 0){
+            return false;
+        }
+        naturezas.splice(index,1);
+        return true;
     }
 }

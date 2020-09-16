@@ -18,6 +18,13 @@ class TituloController {
         let natureza =  apiTitulo.editar(objTitulo);
         response.status(200).send(natureza);
     }
+
+    
+    deletar(request, response){
+        const { id } = request.params;
+        response.status(200).send(apiTitulo.deletar(Number(id)));
+      
+    }
 }
 
 module.exports = { TituloController }

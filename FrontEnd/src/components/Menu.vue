@@ -39,10 +39,10 @@ export default {
     },
 
     data() { 
-        return {
-            drawer: null,
-            listaDeRotas: []
-        }   
+      return {
+          drawer: null,
+          listaDeRotas: [],
+      }   
     },
 
     created(){

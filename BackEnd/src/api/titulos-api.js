@@ -18,10 +18,19 @@ module.exports = {
     
     editar(objTitulo){
         var titulo = new TituloModel(objTitulo);
-        var index = titulos.indexOf(titulo.id);
+        var index = titulos.map(t => t.id).indexOf(titulo.id);
 
         titulos.splice(index,1, titulo);
         return titulos.filter(n => n.id == titulo.id)[0];
+    },
+
+    deletar(id){
+        var index = titulos.map(t => t.id).indexOf(id);
+        if(index < 0){
+            return false;
+        }
+        titulos.splice(index,1);
+        return true;
     }
 
 }

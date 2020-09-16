@@ -18,6 +18,12 @@ class NaturezaLancamentoController {
         let natureza =  apiNaturezaLancamento.editar(objNatureza);
         response.status(200).send(natureza);
     }
+
+    deletar(request, response){
+        const { id } = request.params;
+        response.status(200).send(apiNaturezaLancamento.deletar(Number(id)));
+      
+    }
 }
 
 module.exports = { NaturezaLancamentoController }

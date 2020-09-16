@@ -15,4 +15,7 @@ routes.post('/titulos', tituloController.adicionar);
 routes.put('/naturezas-lancamento/:id', naturezaLancamentoController.editar);
 routes.put('/titulos/:id', tituloController.editar);
 
+routes.delete('/naturezas-lancamento/:id', naturezaLancamentoController.deletar);
+routes.delete('/titulos/:id', tituloController.deletar);
+
 module.exports = { routes }
