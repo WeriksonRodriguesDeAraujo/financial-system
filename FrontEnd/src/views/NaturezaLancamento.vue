@@ -138,6 +138,7 @@ export default {
       }else {
           apiNatureza.cadastrar(this.natureza)
           .then( response => {
+            alert(`Natureza ${this.natureza.nome} foi cadastrada com sucesso!`);
             this.naturezas.push(new NaturezaModel(response.data));
             this.dialog = false;
           })
@@ -164,14 +165,14 @@ export default {
       }
     },
 
-    removerNaturezaDaTabela(){
-      var index = this.naturezas.map(n => n.id).indexOf(this.natureza.id)
+    removerNaturezaDaTabela(natureza){
+      var index = this.naturezas.map(n => n.id).indexOf(natureza.id)
 
       this.naturezas.splice(index, 1);
     },
 
     atualizarNaturezaDaTabela(natureza){
-      var index = this.naturezas.map(n => n.id).indexOf(this.natureza.id)
+      var index = this.naturezas.map(n => n.id).indexOf(natureza.id)
 
       this.naturezas.splice(index, 1, natureza);
     },
